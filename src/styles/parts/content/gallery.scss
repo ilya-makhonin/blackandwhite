@@ -1,0 +1,330 @@
+@import "../../variables";
+
+#modalOverlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  background: $modalOverlay;
+  z-index: 19;
+}
+
+.modal_full_gallery {
+  width: 960px;
+  height: 560px;
+  display: none;
+  position: fixed;
+  z-index: 20;
+  top: 8%;
+  left: 18%;
+
+  .modal_back {
+    @include flex_structure(row, flex-start, flex-end);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background: $modalBackground;
+    position: absolute;
+
+    .modal_img {
+      @include flex_structure(row, center, center);
+      width: 530px;
+      height: 530px;
+
+      #modalFullImg {
+        transform: scale(2);
+      }
+
+      #modalLike {
+        position: absolute;
+        z-index: 11;
+        opacity: 0.5;
+        font-size: 90px;
+        bottom: 10px;
+      }
+
+      #modalLike:hover {
+        opacity: 0.7;
+        color: $pictureLikeColor;
+      }
+    }
+
+    .modal_comments {
+      height: 470px;
+      overflow: scroll;
+      overflow-x: visible;
+    }
+
+    .modal_add_comment {
+      @include flex_structure(row, space-between, center);
+      width: 100%;
+      height: 36px;
+      box-sizing: border-box;
+      padding-top: 5px;
+
+      .modal_add_comment_wrap {
+        width: 82%;
+        margin: 0;
+
+        #galleryUserComment {
+          margin: 0;
+        }
+
+        #gallerySendComment {
+          background: $buttonBackground;
+        }
+      }
+    }
+
+    #modalFullClose {
+      position: absolute;
+      z-index: 12;
+      top: -2px;
+      right: 10px;
+      font-size: 26px;
+      height: 26px;
+      cursor: pointer;
+    }
+  }
+}
+
+.gallery {
+  position: relative;
+}
+
+.gallery_item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 34px;
+
+  .gallery_item_header {
+    @extend .item_gallery;
+    top: -78px;
+    background: $pictureTopPanel;
+    transition: top, 1s;
+    box-sizing: border-box;
+    padding: 16px 19px;
+    color: $pictureTextColor;
+
+    .gallery_item_text {
+
+      .gallery_item_title {
+        @include header_gallery(15px, 0);
+      }
+
+      .gallery_item_subtitle {
+        @include header_gallery(13px, 3px);
+      }
+    }
+
+    .gallery_item__date {
+      width: 26px;
+      float: right;
+
+      .gallery_item_mouth {
+        @include header_gallery(15px, 0);
+        text-transform: uppercase;
+      }
+      .gallery_item_day {
+        @include header_gallery(13px, 3px);
+      }
+    }
+  }
+
+  .gallery_image {
+    width: 262.5px;
+    height: 262.5px;
+  }
+
+  .gallery_item_footer {
+    @extend .item_gallery;
+    bottom: -70px;
+    background: $pictureBottomPanel;
+    box-sizing: border-box;
+    padding: 16px 19px;
+    transition: bottom, 1s;
+
+    .gallery_item_answer {
+
+      .gallery_item_like {
+        color: $pictureLikeColor;
+
+        .gallery_item_like_count {
+          margin-left: 6px;
+          color: $pictureLikeCounter;
+          cursor: pointer;
+        }
+      }
+      .gallery_item_comments {
+        color: $pictureCommentsColor;
+        margin-left: 10px;
+
+        .gallery_item_comments_count {
+          margin-left: 6px;
+          color: $pictureCommentsCounter;
+          cursor: pointer;
+        }
+      }
+
+      .gallery_item_like:hover {
+        color: $pictureLikeColor - 20;
+      }
+
+      .gallery_item_comments:hover {
+        color: $pictureCommentsColor - 20;
+      }
+    }
+    .open_full_btn {
+      width: 13px;
+      height: 13px;
+      float: right;
+      margin-top: 6px;
+      background: url("../img/gallery/btn_full/btnFull.png");
+      cursor: pointer;
+    }
+  }
+}
+
+.gallery_item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $pictureBlackout;
+}
+
+.gallery_mobile {
+  width: 100%;
+  height: 262px;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: $galleryMobile;
+}
+
+
+// Animations
+
+.gallery_item:hover::before {
+  display: none;
+}
+
+.gallery_item:hover  .gallery_item_header {
+  top: 0;
+  transition: top, 1s;
+}
+
+.gallery_item:hover  .gallery_item_footer {
+  bottom: 0;
+  transition: bottom, 1s;
+}
+
+
+@media (max-width: 1200px) and (min-width: 1096px){
+  .modal_full_gallery {
+    left: 6%;
+  }
+}
+
+@media (max-width: 1095px) and (min-width: 1000px) {
+  .modal_full_gallery {
+    top: 6%;
+    left: 2%;
+  }
+}
+
+@media (max-width: 999px) and (min-width: 855px) {
+  .modal_full_gallery {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .modal_back {
+      @include flex_structure(row, flex-start, flex-start);
+      padding-top: 38px;
+
+      .modal_img {
+        width: 477px;
+        height: 477px;
+
+        #modalFullImg {
+          transform: scale(1.8);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 854px) and (min-width: 768px) {
+  .modal_full_gallery {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .modal_back {
+     @include flex_structure(row, flex-start, flex-start);
+      padding-top: 32px;
+
+      .modal_img {
+        width: 424px;
+        height: 424px;
+
+        #modalFullImg {
+          transform: scale(1.6);
+        }
+
+        #modalLike {
+          bottom: 10px;
+        }
+      }
+
+      .modal_comments {
+        width: 100%;
+        height: 500px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (min-width: 200px) {
+  .modal_full_gallery {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .modal_back {
+      @include flex_structure(row, flex-start, flex-start);
+      padding-top: 32px;
+      overflow: auto;
+      overflow-x: hidden;
+
+      .modal_img {
+        margin: 0 auto;
+        width: 292px;
+        height: 292px;
+
+        #modalFullImg {
+          transform: scale(1.1);
+        }
+
+        #modalLike {
+          font-size: 70px;
+          bottom: 10px;
+        }
+      }
+
+      .modal_comments {
+        width: 100%;
+        height: 200px;
+      }
+
+      #modalFullClose {
+        top: 0;
+        right: 18px;
+      }
+    }
+  }
+}

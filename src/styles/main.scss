@@ -1,0 +1,69 @@
+/*
+  Dependencies
+  @bootstrap styles - not connected
+  @Font-awesome - connected through packages
+ */
+
+//@import "../../bower_components/bootstrap/dist/css/bootstrap.css";
+
+
+// variables this project
+
+@import "variables";
+
+
+//General Stylization
+
+@font-face {
+  font-family: "Yanone";
+  src: url("../fonts/YanoneKaffeesatz-Regular.ttf");
+}
+
+body {
+  width: 100%;
+  background: url("../img/background/background.png");
+}
+
+.wrapper {
+  font-family: Yanone, sans-serif;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+
+// Scrollbar style
+
+::-webkit-scrollbar-button {
+  width:6px;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #a5a5a5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
+::-webkit-resizer{
+  width:7px;
+  height:0;
+}
+
+::-webkit-scrollbar{
+  width: 11px;
+}
+
+
+//Custom styles
+
+@import "parts/elements/socialIcons";
+@import "parts/elements/logotype";
+@import "parts/elements/menu";
+@import "parts/header/header";
+@import "parts/content/content";
+@import "parts/subscribe/subscribe";
+@import "parts/footer/footer";

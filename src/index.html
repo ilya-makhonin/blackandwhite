@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black & White</title>
+    <link rel="shortcut icon" href="img/aek.gif" type="image/gif">
+    <link rel="stylesheet" href="packages/bootstrap-4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="packages/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="modal_full_gallery">
+        <div class="row no-gutters modal_back">
+            <div class="col-12 col-md-7">
+                <div class="modal_img">
+                    <img src="" alt="Full image" id="modalFullImg">
+                    <span id="modalLike">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+                <div class="modal_comments">
+                    <div class="modal_comments_list"></div>
+                </div>
+                <form action="" method="get" class="modal_add_comment">
+                    <label class="modal_add_comment_wrap">
+                        <input type="text" name="gallery-user-comment" id="galleryUserComment" class="form-control" placeholder="Your comment">
+                    </label>
+                    <input type="submit" id="gallerySendComment" class="btn btn-dark" value="Send">
+                </form>
+            </div>
+            <span id="modalFullClose">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+    <div id="modalOverlay"></div>
+
+    <div class="wrapper">
+        <div class="container">
+
+            //= template/structure/header.html
+
+
+            <main class="row main">
+                <section class="gallery">
+                    <div class="row justify-content-around">
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                        //= template/elements/galleryItem.html
+                    </div>
+                </section>
+
+                <section class="description">
+                    <div class="row">
+                        <div class="col-12">
+                            <article class="description_container">
+                                <h1 class="description_header">A Picture Is Worth A Thousand Words</h1>
+                                <p class="description_content">
+                                    People peter griffin high school mom bra just avenger le me students friendzoned
+                                    challenge accepted. True Story face troll finals derpina cereal guy lose back final
+                                    week yao male. Not bad luke feel like a sir bacon pizza coffee a the avengers puking
+                                    rainbows nyan cat search.
+                                </p>
+                                <button type="button" class="btn btn-dark description_button">Learn more about us</button>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-12 col-lg-9">
+                            <section class="blog">
+                                //= template/elements/post.html
+                                //= template/elements/post.html
+                            </section>
+                        </div>
+
+                        <div class="col-12 col-lg-3">
+                            <aside class="sidebars">
+                                <div class="sidebar sidebar_categories">
+                                    <h3 class="sidebar_header">Categories</h3>
+                                    <div class="sidebar_container"></div>
+                                </div>
+                                <div class="sidebar sidebar_archive">
+                                    <h3 class="sidebar_header">Archive</h3>
+                                    <div class="sidebar_container"></div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            //= template/structure/subscribe.html
+
+            //= template/structure/footer.html
+        </div>
+    </div>
+
+
+    <script src="packages/jquery/jquery.min.js"></script>
+    <script src="packages/popper.js/popper.min.js"></script>
+    <script src="packages/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

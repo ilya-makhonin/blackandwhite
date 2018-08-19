@@ -1,0 +1,48 @@
+@import "../../variables";
+
+.random_post_section {
+
+  .random_post {
+    width: 100%;
+    background: $randomPostBackground;
+    padding: 40px 30px;
+
+    .random_post_header {
+      margin-bottom: 18px;
+    }
+
+    .random_post_content {
+      .random_post_image {
+        margin-bottom: 13px;
+      }
+
+      .random_post_text {
+        .random_post_subtext {
+          font-size: 22px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1200px) and (min-width: 577px) {
+  .random_post_section {
+    .random_post {
+      @include flex_structure(column, flex-start, center);
+    }
+  }
+}
+
+@media (max-width: 576px) and (min-width: 200px) {
+  .random_post_section {
+    .random_post {
+      @include flex_structure(column, flex-start, center);
+    }
+
+    .random_post:nth-child(1) {
+      margin-bottom: 20px;
+    }
+  }
+}

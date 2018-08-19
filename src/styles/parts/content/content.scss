@@ -1,0 +1,58 @@
+@import "../../variables";
+
+.main {
+  margin-top: 60px;
+}
+
+.description {
+  @extend .content_basis;
+  background: $descriptionBackground;
+  margin-bottom: 34px;
+
+  .description_container {
+    @include flex_structure(column, flex-start, center);
+    width: 60%;
+    box-sizing: border-box;
+    padding: 72px 0;
+    margin: 0 auto;
+
+    .description_header {
+      font-size: 28px;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .description_content {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .description_button {
+      @extend .button_style;
+      margin-top: 45px;
+    }
+  }
+}
+
+.content {
+  @extend .content_basis;
+}
+
+@media (max-width: 768px){
+  .description {
+    margin-bottom: 0;
+
+    .description_container {
+      width: 92%;
+      padding: 35px 0;
+
+      .description_button {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@import "gallery";
+@import "sidebar";
+@import "blog";

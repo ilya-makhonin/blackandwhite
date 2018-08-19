@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.header {
+  background: $headerBackground;
+  padding: 50px 0;
+
+  .header_menu {
+
+    .menu_item_container {
+      background: $headerMenuBackground;
+    }
+
+    .menu_item_link {
+      color: $headerMenuLinkColor;
+    }
+
+    .menu_item_link:hover {
+      color: $headerMenuLinkHoverColor;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 30px;
+  }
+}

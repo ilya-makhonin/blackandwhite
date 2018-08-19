@@ -1,0 +1,27 @@
+.menu_item_container {
+  left: -110px;
+}
+
+.dropleft .dropdown-toggle:before {
+  display: none;
+}
+
+.btn_menu {
+  float: right;
+}
+
+.menu_click {
+  transform: rotate(0);
+  transition: transform 0.7s;
+}
+
+.menu_click_active {
+  transform: rotate(90deg);
+  transition: transform 0.7s;
+}
+
+@media (max-width: 576px) {
+  .btn_menu {
+    margin-top: 10px;
+  }
+}

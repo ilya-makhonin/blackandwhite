@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black & White</title>
+    <link rel="shortcut icon" href="img/aek.gif" type="image/gif">
+    <link rel="stylesheet" href="packages/bootstrap-4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="packages/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="modal_full_gallery">
+        <div class="row no-gutters modal_back">
+            <div class="col-12 col-md-7">
+                <div class="modal_img">
+                    <img src="" alt="Full image" id="modalFullImg">
+                    <span id="modalLike">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+                <div class="modal_comments">
+                    <div class="modal_comments_list"></div>
+                </div>
+                <form action="" method="get" class="modal_add_comment">
+                    <label class="modal_add_comment_wrap">
+                        <input type="text" name="gallery-user-comment" id="galleryUserComment" class="form-control" placeholder="Your comment">
+                    </label>
+                    <input type="submit" id="gallerySendComment" class="btn btn-dark" value="Send">
+                </form>
+            </div>
+            <span id="modalFullClose">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+    <div id="modalOverlay"></div>
+
+    <div class="wrapper">
+        <div class="container">
+
+            
+            <header class="row justify-content-center header">
+                <div class="col-auto col-sm-6 col-md-5 col-lg-4">
+                    <div class="social_icons">
+                        <ul class="social_icons_list">
+                            <li class="social_icons_item">
+                                <a href="https://dribbble.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://twitter.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://www.behance.net" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-behance-square" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://vimeo.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-vimeo-square" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://www.flickr.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-flickr" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="col-12 col-sm-4">
+                    <div class="logotype">
+                        <img src="img/logotype/logo-black.png" alt="BLACK & WHITE" class="logo_img">
+                    </div>
+                </div>
+            
+                <div class="col-auto col-sm-2 col-md-3 col-lg-4">
+                    <nav class="header_menu">
+                        
+                        <div class="dropleft">
+                            <div class="btn dropdown-toggle btn_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="" class="menu_click" alt="">
+                            </div>
+                        
+                            <div class="dropdown-menu menu_item_container" >
+                                <a class="dropdown-item menu_item_link" href="#">Action</a>
+                                <a class="dropdown-item menu_item_link" href="#">Another action</a>
+                                <a class="dropdown-item menu_item_link" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+
+            <main class="row main">
+                <section class="gallery">
+                    <div class="row justify-content-around">
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto col-lg-3">
+                            <div class="gallery_item">
+                                <div class="gallery_item_header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_text">
+                                                <h4 class="gallery_item_title"></h4>
+                                                <p class="gallery_item_subtitle"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="gallery_item__date">
+                                                <h4 class="gallery_item_mouth"></h4>
+                                                <p class="gallery_item_day"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <img src="" alt="Image" class="gallery_image">
+                        
+                                <div class="gallery_item_footer">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="gallery_item_answer">
+                                                <span class="gallery_item_like">
+                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    <span class="gallery_item_like_count"></span>
+                                                </span>
+                                                <span class="gallery_item_comments">
+                                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    <span class="gallery_item_comments_count"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="open_full_btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="description">
+                    <div class="row">
+                        <div class="col-12">
+                            <article class="description_container">
+                                <h1 class="description_header">A Picture Is Worth A Thousand Words</h1>
+                                <p class="description_content">
+                                    People peter griffin high school mom bra just avenger le me students friendzoned
+                                    challenge accepted. True Story face troll finals derpina cereal guy lose back final
+                                    week yao male. Not bad luke feel like a sir bacon pizza coffee a the avengers puking
+                                    rainbows nyan cat search.
+                                </p>
+                                <button type="button" class="btn btn-dark description_button">Learn more about us</button>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-12 col-lg-9">
+                            <section class="blog">
+                                
+                                <div class="post">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <article class="post_content">
+                                                <header class="row post_header">
+                                                    <div class="col-12 col-sm-8">
+                                                        <div class="row">
+                                                            <div class="col-7 col-sm-9">
+                                                                <span class="post_categories"></span>
+                                                            </div>
+                                                            <div class="col-5 col-sm-3">
+                                                                <span class="post_date"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <a href="#" class="post_title_link">
+                                                                    <h2 class="post_title"></h2>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="col-10 col-sm-4">
+                                                        <p class="post_read">
+                                                            <span class="post_read_time"></span>
+                                                            <i class="fa fa-bookmark" aria-hidden="true"></i>
+                                                        </p>
+                                                    </div>
+                                                </header>
+                                
+                                                <div class="row no-gutters justify-content-center post_content">
+                                                    <div class="col-12 col-lg-5">
+                                                        <figure class="post_image_block">
+                                                            <img src="" alt="City" class="post_image">
+                                
+                                                            <figcaption class="post_image_signature">
+                                                                <span class="post_image_text"></span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                
+                                                    <div class="col-12 col-lg-7">
+                                                        <p class="post_text"></p>
+                                
+                                                        <p class="post_subtext"></p>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="post_info">
+                                                <div class="post_author">
+                                                    <h3 class="post_author_header">Author</h3>
+                                                    <h4 class="post_author_name"></h4>
+                                                    <div class="author_info">
+                                                        <img src="" alt="Author" class="post_author_image">
+                                
+                                                        <div class="author_soc_network">
+                                                            <ul class="author_soc_list">
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://twitter.com" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://dribbble.com" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://www.behance.net" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-behance-square" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="social_network">
+                                                    <ul class="social_network_list">
+                                                        <li class="social_network_item">
+                                                            <a href="https://www.instagram.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://facebook.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://twitter.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://plus.google.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="post">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <article class="post_content">
+                                                <header class="row post_header">
+                                                    <div class="col-12 col-sm-8">
+                                                        <div class="row">
+                                                            <div class="col-7 col-sm-9">
+                                                                <span class="post_categories"></span>
+                                                            </div>
+                                                            <div class="col-5 col-sm-3">
+                                                                <span class="post_date"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <a href="#" class="post_title_link">
+                                                                    <h2 class="post_title"></h2>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="col-10 col-sm-4">
+                                                        <p class="post_read">
+                                                            <span class="post_read_time"></span>
+                                                            <i class="fa fa-bookmark" aria-hidden="true"></i>
+                                                        </p>
+                                                    </div>
+                                                </header>
+                                
+                                                <div class="row no-gutters justify-content-center post_content">
+                                                    <div class="col-12 col-lg-5">
+                                                        <figure class="post_image_block">
+                                                            <img src="" alt="City" class="post_image">
+                                
+                                                            <figcaption class="post_image_signature">
+                                                                <span class="post_image_text"></span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                
+                                                    <div class="col-12 col-lg-7">
+                                                        <p class="post_text"></p>
+                                
+                                                        <p class="post_subtext"></p>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="post_info">
+                                                <div class="post_author">
+                                                    <h3 class="post_author_header">Author</h3>
+                                                    <h4 class="post_author_name"></h4>
+                                                    <div class="author_info">
+                                                        <img src="" alt="Author" class="post_author_image">
+                                
+                                                        <div class="author_soc_network">
+                                                            <ul class="author_soc_list">
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://twitter.com" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://dribbble.com" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="author_soc_item">
+                                                                    <a href="https://www.behance.net" class="author_soc_link" target="_blank">
+                                                                        <i class="fa fa-behance-square" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="social_network">
+                                                    <ul class="social_network_list">
+                                                        <li class="social_network_item">
+                                                            <a href="https://www.instagram.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://facebook.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://twitter.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="social_network_item">
+                                                            <a href="https://plus.google.com" target="_blank" class="social_network_link">
+                                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="col-12 col-lg-3">
+                            <aside class="sidebars">
+                                <div class="sidebar sidebar_categories">
+                                    <h3 class="sidebar_header">Categories</h3>
+                                    <div class="sidebar_container"></div>
+                                </div>
+                                <div class="sidebar sidebar_archive">
+                                    <h3 class="sidebar_header">Archive</h3>
+                                    <div class="sidebar_container"></div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            
+            <section class="row justify-content-center subscribe">
+                <div class="col-lg-10 col-xl-6">
+                    <section class="form_contact_section">
+                        <h2 class="form_contact_header">
+                            Contact Me
+                        </h2>
+                        <p  class="form_contact_desc">
+                            Mom hammer creepy me gusta morbi eat le friend steve jobs cellphone clinton cereal guy.
+                        </p>
+                        <form action="" method="post" class="form_contact">
+                            <label class="contact_group">
+                                <input type="text" name="user-name" class="contact_input" id="contact_name" placeholder="Your Name">
+                                <span class="input_placeholder">*required</span>
+                            </label>
+                            <label class="contact_group">
+                                <input type="text" name="user-comment" class="contact_input" id="contact_email" placeholder="Your E-mail Address">
+                                <span class="input_placeholder input_valid">*please enter a valid address</span>
+                            </label>
+                            <label class="contact_group"><textarea name="user-comment" class="contact_comment" id="user_comments" cols="30" rows="10" placeholder="Your Message"></textarea>
+                            </label>
+                            <input type="submit" class="contact_submit" id="contact_send" value="Send E-mail">
+                        </form>
+                    </section>
+                </div>
+                <div class="col-lg-10 col-xl-6">
+                    <section class="row justify-content-center random_post_section">
+                        
+                        <div class="col-10 col-sm-6">
+                            <div class="random_post">
+                                <h2 class="random_post_header">
+                                    Random Post
+                                </h2>
+                        
+                                <figure class="random_post_content">
+                                    <img src="" alt="Image Post" class="random_post_image">
+                        
+                                    <figcaption class="random_post_text">
+                                        <span class="random_post_subtext">Some advise on Photography</span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        
+                        <div class="col-10 col-sm-6">
+                            <div class="random_post">
+                                <h2 class="random_post_header">
+                                    Random Post
+                                </h2>
+                        
+                                <figure class="random_post_content">
+                                    <img src="" alt="Image Post" class="random_post_image">
+                        
+                                    <figcaption class="random_post_text">
+                                        <span class="random_post_subtext">Some advise on Photography</span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="row">
+                        <div class="col-12">
+                            <section class="subscribe_section">
+                                <header class="subscribe_header">
+                                    <img src="img/logotype/logo-black.png" alt="Logotype" class="subscribe_header_img">
+                                    <h2 class="subscribe_header_text">
+                                        Newsletter
+                                    </h2>
+                                </header>
+                                <form action="" method="post" class="form_subscribe">
+                                    <label class="subscribe_group">
+                                        <input type="text" name="subscribe-email" class="subscribe_input" id="subscribe_email" placeholder="Your E-mail Address">
+                                    </label>
+                                    <input type="submit" class="subscribe_submit" id="subscribe_send" value="Subscribe">
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <footer class="row justify-content-center footer">
+                <div class="col-auto col-sm-6 col-md-5 col-lg-4">
+                    <div class="social_icons">
+                        <ul class="social_icons_list">
+                            <li class="social_icons_item">
+                                <a href="https://dribbble.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://twitter.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://www.behance.net" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-behance-square" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://vimeo.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-vimeo-square" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="social_icons_item">
+                                <a href="https://www.flickr.com" class="social_icons_link" target="_blank">
+                                    <i class="fa fa-flickr" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="col-12 col-sm-4">
+                    <div class="logotype">
+                        <img src="img/logotype/logo-white.png" alt="BLACK & WHITE" class="logo_img">
+                    </div>
+                </div>
+            
+                <div class="col-auto col-sm-2 col-md-3 col-lg-4">
+                    <nav class="footer_menu">
+                        
+                        <div class="dropleft">
+                            <div class="btn dropdown-toggle btn_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="" class="menu_click" alt="">
+                            </div>
+                        
+                            <div class="dropdown-menu menu_item_container" >
+                                <a class="dropdown-item menu_item_link" href="#">Action</a>
+                                <a class="dropdown-item menu_item_link" href="#">Another action</a>
+                                <a class="dropdown-item menu_item_link" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="packages/jquery/jquery.min.js"></script>
+    <script src="packages/popper.js/popper.min.js"></script>
+    <script src="packages/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

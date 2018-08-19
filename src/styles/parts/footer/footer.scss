@@ -1,0 +1,31 @@
+@import "../../variables";
+
+.footer {
+  background: $footerBackground;
+  padding: 50px 0;
+  margin-top: 75px;
+
+  .footer_menu {
+
+    .menu_item_container {
+      top: -18px;
+      background: $footerMenuBackground;
+    }
+
+    .menu_item_link {
+      color: $footerMenuLinkColor;
+    }
+
+    .menu_item_link:hover {
+      color: $footerMenuLinkHoverColor;
+      background: $footerMenuLinkHoverBackground;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "website.assembly",
+  "version": "1.0.0",
+  "description": "Procurement for site assembly",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "html:build": "gulp html:build",
+    "style:build": "gulp style:build",
+    "image:build": "gulp image:build",
+    "fonts:build": "gulp fonts:build",
+    "build": "gulp build",
+    "js:build": "gulp js:build",
+    "es:build": "gulp es:build",
+    "clean": "gulp clean",
+    "autocompile": "gulp autocompile",
+    "transference": "gulp packages:transference",
+    "start": "gulp"
+  },
+  "author": "Ilia Makhonin",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-pngquant": "^1.0.12",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
+}

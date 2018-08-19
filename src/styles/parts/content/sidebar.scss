@@ -1,0 +1,100 @@
+@import "./../../variables";
+
+.sidebars {
+  width: 100%;
+
+  .sidebar_categories {
+    margin-bottom: 30px;
+  }
+
+  .sidebar_archive {
+    .sidebar_content {
+      box-sizing: border-box;
+      padding-left: 12px;
+    }
+  }
+
+  .sidebar {
+    background: $sidebarBackground;
+    box-sizing: border-box;
+    padding: 44px 26px;
+
+    .sidebar_header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .sidebar_container {
+      min-height: 120px;
+      max-height: 360px;
+      overflow: auto;
+      font-size: 18px;
+
+      .sidebar_tab {
+        margin-top: 18px;
+        cursor: pointer;
+      }
+
+      .sidebar_tab:before {
+        @extend .sidebar_before;
+      }
+
+      .sidebar_tab:nth-child(1) {
+        margin-top: 0;
+      }
+
+      .sidebar_tab:hover {
+        color: $sidebarHover;
+      }
+
+      .sidebar_content {
+        display: none;
+
+
+        .sidebar_inside_tab {
+          cursor: pointer;
+        }
+
+        .sidebar_inside_tab:before {
+          @extend .sidebar_before;
+        }
+
+        .sidebar_inside_tab:hover {
+          color: $sidebarHover;
+        }
+
+        .sidebar_inside_content {
+          display: none;
+        }
+      }
+    }
+
+    .sidebar_count, .sidebar_inside_count {
+      color: $sidebarCountColor;
+      text-decoration: underline;
+    }
+
+    .sidebar_link_container {
+      @include flex_structure(column, flex-start, flex-start);
+      box-sizing: border-box;
+      padding-left: 12px;
+
+      .sidebar_link {
+        color: $sidebarLinkColor;
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 992px) and (min-width: 300px) {
+  .sidebars {
+    @include flex_structure(row, space-between, flex-start);
+
+    .sidebar {
+      width: 48%;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../variables";
+
+.form_contact_section {
+  width: 100%;
+  background: $subscribeFormBackground;
+  padding: 50px 20px;
+
+  .form_contact_header {
+    font-weight: 500;
+  }
+
+  .form_contact_desc {
+    width: 70%;
+    font-size: 18px;
+  }
+
+  .form_contact {
+    @include flex_structure(column, flex-start, flex-start);
+    position: relative;
+
+    .contact_group {
+      width: 100%;
+
+      .contact_input {
+        @extend .input_style;
+        width: 55%;
+        height: 45px;
+        margin-bottom: 20px;
+      }
+
+      .contact_comment {
+        @extend .input_style;
+        padding: 16px 10px;
+        width: 100%;
+        height: 242px;
+        resize: none;
+      }
+
+      .input_placeholder {
+        color: $subscribeRequired;
+        margin-left: 27px;
+      }
+
+      .input_valid {
+        color: $subscribeEmailValid;
+      }
+    }
+
+    .contact_submit {
+      @extend .button_style;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 451px) {
+  .form_contact_section {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 450px) and (min-width: 200px) {
+  .form_contact_section {
+    margin-bottom: 30px;
+
+    .form_contact_desc {
+      width: 96%;
+    }
+
+    .form_contact {
+      @include flex_structure(column, flex-start, flex-start);
+      position: relative;
+
+      .contact_group {
+        .contact_input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../variables";
+
+.social_icons {
+
+  .social_icons_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .social_icons_item {
+      display: inline-block;
+      margin-right: 30px;
+
+      .social_icons_link {
+        font-size: 21px;
+        color: $socialIconsColor;
+        text-decoration: none;
+      }
+
+      .social_icons_link:hover {
+        color: $socialIconsHover;
+      }
+    }
+
+    .social_icons_item:nth-child(5) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .social_icons {
+    margin-bottom: 10px;
+  }
+}

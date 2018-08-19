@@ -1,0 +1,102 @@
+$headerBackground: #ffffff;
+$footerBackground: #000000;
+$buttonBackground: #202020;
+$headerMenuBackground: #000000;
+$headerMenuLinkColor: #ffffff;
+$headerMenuLinkHoverColor: #000000;
+$footerMenuBackground: #ffffff;
+$footerMenuLinkColor: #000000;
+$footerMenuLinkHoverColor: #ffffff;
+$footerMenuLinkHoverBackground: #000000;
+$socialIconsColor: #a0a1a5;
+$socialIconsHover: #202025;
+$pictureBlackout: rgba(0, 0, 0, 0.2);
+$pictureTopPanel: rgba(0, 0, 0, 0.5);
+$pictureBottomPanel: #ffffff;
+$pictureTextColor: #ffffff;
+$pictureLikeColor: #e6618c;
+$pictureLikeCounter: #9f9d9b;
+$pictureCommentsColor: #e6618c;
+$pictureCommentsCounter: #9f9d9b;
+$galleryMobile: #ffffff;
+$modalOverlay: rgba(0, 0, 0, 0.5);
+$modalBackground: #ffffff;
+$descriptionBackground: #ffffff;
+$buttonTextColor: #ffffff;
+$sidebarBackground: #ffffff;
+$sidebarLinkColor: #e6618c;
+$sidebarCountColor: #e6618c;
+$sidebarBeforeColor: #a5a5a5;
+$sidebarHover: #4e5150;
+$blogBackground: #ffffff;
+$blogTitleColor: #000000;
+$blogHeaderTextColor: #989b9f;
+$blogAuthorNameColor: #e6618c;
+$blogTextColor: #000000;
+$blogSubtextColor: #989b9f;
+$blogSignatureColor: #989b9f;
+$blogSocialColor: #c8c8c8;
+$blogAuthorSocialColor: #ffffff;
+$blogAuthorSocNetMobile: #000000;
+$randomPostBackground: #ffffff;
+$subscribeFormBackground: #ffffff;
+$subscribeInputBackground: #f2f2f2;
+$subscribeEmailValid: #f2ba59;
+$subscribeRequired: #c0c0c0;
+$subscribeInfoPanelBackground: rgba(255, 0, 0, 0.3);
+
+
+
+@mixin flex_structure($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin header_gallery($fontSize, $topPadding) {
+  font-size: $fontSize;
+  margin: 0;
+  padding: $topPadding 0 0 0;
+}
+
+.item_gallery {
+  position: absolute;
+  width: 100%;
+}
+
+.content_basis {
+  width: 100%;
+  margin-top: 31px;
+}
+
+.button_style {
+  width: 196px;
+  height: 46px;
+  border: none;
+  border-radius: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: $buttonTextColor;
+  background: $buttonBackground;
+}
+
+.sidebar_before {
+  display: inline-block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: $sidebarBeforeColor;
+  box-sizing: border-box;
+  vertical-align: 3px;
+  margin-right: 5px;
+  transform: rotate(45deg);
+}
+
+.input_style {
+  background: $subscribeInputBackground;
+  box-sizing: border-box;
+  padding: 16px 30px;
+  border: 1px solid $subscribeInputBackground - 50;
+  outline: none;
+}

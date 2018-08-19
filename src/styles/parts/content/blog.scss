@@ -1,0 +1,263 @@
+@import "./../../variables";
+
+.blog {
+  font-family: Yanone, sans-serif;
+
+  .post {
+    background: $blogBackground;
+    min-height: 456px;
+    box-sizing: border-box;
+    padding: 46px 30px;
+
+    .post_content {
+      .post_header {
+        color: $blogHeaderTextColor;
+        font-size: 16px;
+
+        .post_read {
+          text-align: right;
+          margin-right: 10px;
+
+          .post_read_time {
+            margin-right: 8px;
+          }
+        }
+
+        .post_title_link {
+          color: $blogTitleColor;
+
+          .post_title {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .post_content {
+        margin-top: 8px;
+
+        .post_image_block {
+          .post_image {
+
+          }
+
+          .post_image_signature {
+            margin-top: 6px;
+            margin-left: 8px;
+
+            .post_image_text {
+              color: $blogSignatureColor;
+            }
+          }
+        }
+
+        .post_text {
+          color: $blogTextColor;
+          font-size: 20px;
+          font-weight: 200;
+        }
+
+        .post_subtext {
+          color: $blogSubtextColor;
+          font-size: 18px;
+          font-weight: 200;
+        }
+      }
+    }
+
+    .post_info {
+      position: relative;
+
+      .post_author {
+        @include flex_structure(column, flex-start, center);
+
+        .post_author_header {
+          margin-bottom: 2px;
+          font-size: 22px;
+        }
+
+        .post_author_name {
+          color: $blogAuthorNameColor;
+          font-weight: 100;
+          font-size: 18px;
+          margin-top: 0;
+        }
+
+        .author_info {
+          position: relative;
+
+          .post_author_image:hover ~ .author_soc_network {
+            display: block;
+          }
+
+          .author_soc_network:hover {
+            display: block;
+          }
+
+          .author_soc_network {
+            display: none;
+            width: 87px;
+            height: 21px;
+            position: absolute;
+            top: 14px;
+            left: 45px;
+            background: url("../img/blog/authors/author_social/soc_background.png") no-repeat;
+            z-index: 10;
+
+            .author_soc_list {
+              list-style: none;
+              padding: 0 0 0 16px;
+
+              .author_soc_item {
+                display: inline-block;
+                margin-right: 6px;
+
+                .author_soc_link {
+                  color: $blogAuthorSocialColor;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .social_network {
+        margin-top: 40px;
+
+        .social_network_list {
+          list-style: none;
+
+          .social_network_item {
+            margin-bottom: 15px;
+
+            .social_network_link {
+              color: $blogSocialColor;
+              font-size: 22px;
+            }
+          }
+
+          .social_network_item:hover > .social_network_link{
+            color: $blogSocialColor - #aaa;
+          }
+        }
+      }
+    }
+  }
+
+  .post:nth-child(2) {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+  .blog {
+    .post {
+      .post_content {
+        .post_image_block {
+          .post_image {
+            transform: scale(.9);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+  .blog {
+    margin-bottom: 20px;
+
+    .post {
+      .post_content {
+        .post_image_block {
+          @include flex_structure(column, flex-start, center);
+
+          .post_image {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) and (min-width: 451px) {
+  .blog {
+    margin-bottom: 20px;
+
+    .post {
+      .post_content {
+        .post_header {
+          .post_read {
+            text-align: right;
+            margin-right: 0;
+          }
+        }
+
+        .post_image_block {
+          @include flex_structure(column, flex-start, center);
+        }
+      }
+
+      .post_info {
+        .post_author {
+          .post_author_name {
+            text-align: center;
+          }
+
+          .author_info {
+            .author_soc_network {
+              display: block;
+              background: $blogAuthorSocNetMobile;
+              top: 56px;
+              left: -18px;
+            }
+          }
+        }
+
+        .social_network {
+          .social_network_list {
+            list-style: none;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) and (min-width: 200px) {
+  .blog {
+    margin-bottom: 20px;
+
+    .post {
+      .post_content {
+        .post_image_block {
+          @include flex_structure(column, flex-start, center);
+        }
+      }
+
+      .post_info {
+        .post_author {
+          .post_author_name {
+            text-align: center;
+          }
+
+          .author_info {
+            .author_soc_network {
+              display: block;
+              background: $blogAuthorSocNetMobile;
+              top: 56px;
+              left: -26px;
+            }
+          }
+        }
+
+        .social_network {
+          .social_network_list {
+            padding: 12px;
+          }
+        }
+      }
+    }
+  }
+}

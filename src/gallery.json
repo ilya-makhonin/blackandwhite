@@ -1,0 +1,106 @@
+[
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/auto.png",
+    "footer": {
+      "likeCounter": 36,
+      "commentsCounter": 25
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/coast.png",
+    "footer": {
+      "likeCounter": 39,
+      "commentsCounter": 21
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/ocean.png",
+    "footer": {
+      "likeCounter": 33,
+      "commentsCounter": 23
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/rails.png",
+    "footer": {
+      "likeCounter": 36,
+      "commentsCounter": 25
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/road.png",
+    "footer": {
+      "likeCounter": 36,
+      "commentsCounter": 28
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/rough.png",
+    "footer": {
+      "likeCounter": 38,
+      "commentsCounter": 25
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/stones.png",
+    "footer": {
+      "likeCounter": 30,
+      "commentsCounter": 40
+    }
+  },
+  {
+    "header": {
+      "title": "Awesome Day",
+      "subtitle": "View from above",
+      "month": "Jan",
+      "day": "25th"
+    },
+    "srcImage": "./../img/gallery/time.png",
+    "footer": {
+      "likeCounter": 31,
+      "commentsCounter": 25
+    }
+  }
+]
